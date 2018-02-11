@@ -61,6 +61,7 @@ module Grape
           text = File.read( File.join(new_path, file_name) )
           replace_module = text.gsub('BOILERPLATE', project.upcase.gsub('_', ''))
           File.open(File.join(new_path, file_name), 'w') { |file| file.puts replace_module }
+          puts "created file ./#{file_name}"
         end
 
         config_files = ['/config/mongoid.yml']
@@ -68,7 +69,23 @@ module Grape
           text = File.read( File.join(new_path, file_name) )
           replace_db = text.gsub( 'boilerplate', project )
           File.open( File.join(new_path, file_name), 'w' ) { |file| file.puts replace_db }
+          puts "created file ./#{file_name}"
         end
+
+        folders_to_make = ['entities', 'lib', 'log', 'bin', 'models', 'resources', 'tasks']
+        folders_to_make.each do |folder|
+          Dir.mkdir( File.join(new_path, folder) )
+          puts  "created directory ./#{folder}"
+        end
+        ## create emty folders
+        ## entities
+        ## lib
+        ## log
+        ## bin
+        ## models
+        ## resources
+        ## tasks
+
       end
 
     end
