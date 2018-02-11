@@ -1,0 +1,17 @@
+require 'rubygems'
+require 'bundler'
+require 'date'
+
+#encoding: UTF-8
+
+## Dependencies
+require 'bundler'
+Bundler.require(:default)
+Dotenv.load("./.env.#{(ENV['RACK_ENV'] || 'development')}")
+
+## Settings
+require './init.rb'
+require './settings.rb'
+
+## Import rake tasks
+Dir.glob('./tasks/*.rake') { |file| load file }

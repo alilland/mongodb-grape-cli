@@ -1,0 +1,18 @@
+source 'http://rubygems.org'
+
+ruby '2.4.1'
+
+gem 'rack'
+gem 'rack-cors'
+gem 'rack-contrib'
+gem 'dotenv'
+gem 'grape'
+gem 'grape-entity'
+gem 'grape_logging'
+gem 'puma'
+gem 'mongoid'
+gem 'sanitize'
+gem "kaminari", "~>0.16.3"
+gem 'rake'
+gem 'pry', group: :development
+gem 'tux', group: :development

@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+load File.join(File.dirname(__FILE__), '../lib/grape/cli/mongodb.rb')
+
+Grape::Cli::Mongodb.execute

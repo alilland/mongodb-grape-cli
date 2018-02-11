@@ -1,0 +1,14 @@
+development:
+  clients:
+    default:
+      database: boilerplate
+      hosts:
+        - 127.0.0.1:27017
+      use_utc: true
+production:
+  clients:
+    default:
+      database: boilerplate
+      hosts:
+        - 127.0.0.1:27017
+      use_utc: true
