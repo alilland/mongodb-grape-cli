@@ -24,6 +24,18 @@ Quickly start a boilerplate Grape API with a MongoDB backend using the following
 
     $ grape -n YOUR_PROJECT_NAME
 
+Next, cd into your directory
+
+    $ cd YOUR_PROJECT_NAME
+
+Install the project dependencies/generate a new Gemfile.lock
+
+    $ bundle install
+
+Lastly, run the project - if everything works correctly the puma server should start your server
+
+    $ bundle exec rackup
+
 
 ## Development
 
