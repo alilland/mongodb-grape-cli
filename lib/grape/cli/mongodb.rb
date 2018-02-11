@@ -46,9 +46,11 @@ module Grape
 
         ## Copy the boilerplate directory to the filepath
         FileUtils.cp_r(boilerplate, filepath)
+        puts 'copied boilerplate directory to the working directory'
 
         ## rename the boilerplate directory to the project name
         FileUtils.mv( "#{filepath}/boilerplate", "#{filepath}/#{project}" )
+        puts 'renamed the boilerplate directory to the new project name'
 
         new_path = "#{filepath}/#{project}"
 
@@ -56,12 +58,13 @@ module Grape
           print '.'
         end
 
+
         file_names = ['/init.rb', '/config.ru', '/config/entities.rb']
         file_names.each do |file_name|
           text = File.read( File.join(new_path, file_name) )
           replace_module = text.gsub('BOILERPLATE', project.upcase.gsub('_', ''))
           File.open(File.join(new_path, file_name), 'w') { |file| file.puts replace_module }
-          puts "created file #{file_name}"
+          puts "overwrote boilerplate for file #{file_name}"
         end
 
         config_files = ['/config/mongoid.yml']
@@ -69,13 +72,19 @@ module Grape
           text = File.read( File.join(new_path, file_name) )
           replace_db = text.gsub( 'boilerplate', project.downcase )
           File.open( File.join(new_path, file_name), 'w' ) { |file| file.puts replace_db }
-          puts "created file #{file_name}"
+          puts "overwrote boilerplate for file #{file_name}"
         end
 
         folders_to_make = ['entities', 'lib', 'log', 'bin', 'models', 'resources', 'tasks']
         folders_to_make.each do |folder|
           Dir.mkdir( File.join(new_path, folder) )
           puts  "created directory #{folder}"
+        end
+
+        files_to_make = ['env.development']
+        files_to_make.each do |file|
+          File.new( File.join( new_path, file ), 'w' )
+          puts "created file #{file}"
         end
 
       end
