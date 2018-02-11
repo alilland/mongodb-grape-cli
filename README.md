@@ -1,8 +1,6 @@
 # Grape::Cli::Mongodb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/grape/cli/mongodb`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Quickly bootstrap a working Grape API with MongoDB (you must have MongoDB installed, and have it running on localhost with the default port)
 
 ## Installation
 
