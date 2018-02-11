@@ -31,19 +31,21 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = '>= 2.4.1'
+
   spec.add_development_dependency "bundler", "~> 1.14"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_runtime_dependency 'rack'
-  spec.add_runtime_dependency 'rack-cors'
-  spec.add_runtime_dependency 'rack-contrib'
-  spec.add_runtime_dependency 'dotenv'
-  spec.add_runtime_dependency 'grape'
-  spec.add_runtime_dependency 'grape-entity'
-  spec.add_runtime_dependency 'grape_logging'
-  spec.add_runtime_dependency 'puma'
-  spec.add_runtime_dependency 'mongoid'
-  spec.add_runtime_dependency 'sanitize'
-  spec.add_runtime_dependency 'kaminari', "~>0.16.3"
-  spec.add_runtime_dependency 'pry'
-  spec.add_runtime_dependency 'tux'
+  spec.add_development_dependency "rake", ">= 10.0"
+
+  spec.add_dependency 'rack', "~> 2.0.3"
+  spec.add_dependency 'rack-cors', "~> 1.0.2"
+  spec.add_dependency 'rack-contrib', "~> 1.2.0"
+  spec.add_dependency 'dotenv', "~> 2.2.1"
+  spec.add_dependency 'grape', "~> 1.0.1"
+  spec.add_dependency 'grape-entity', "~> 0.6.1"
+  spec.add_dependency 'grape_logging', "~> 1.7.0"
+  spec.add_dependency 'puma', "~> 3.10.0"
+  spec.add_dependency 'mongoid', "~> 6.2.1"
+  spec.add_dependency 'sanitize', "~> 4.5.0"
+  spec.add_dependency 'kaminari', "~>0.16.3"
+  spec.add_dependency 'pry', "~> 0.11.3"
+  spec.add_dependency 'tux', "~> 0.3.0"
 end
